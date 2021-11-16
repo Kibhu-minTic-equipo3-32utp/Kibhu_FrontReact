@@ -1,16 +1,15 @@
 import React, {Component} from 'react';
-import './Services.css';
 
 
-export default class Servicios extends Component {
+export default class Precios extends Component {
 
     render () {
         return (
-            <div classname="Servicios">
+            <div className="Precios">
                 <h1>  Servicios de Kibhu</h1>
+                
                 <h2> Nuestros servicios son:  </h2>
             </div>
         )
     }
 }
-
