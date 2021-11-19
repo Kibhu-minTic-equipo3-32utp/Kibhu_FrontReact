@@ -1,18 +1,16 @@
-import React, {Component} from 'react';
+import { Link } from "react-router-dom"
 
 
 
-export default class Login extends Component {
-
-    render () {
-        return (
-            <div>
-                <form> 
-                    <input username="username" placeholder="escriba su usuario"  /> 
-                    <input password="password" placeholder="escriba su contraseña" /> 
-                </form>
-            </div>
-        )
-    }
+const Login = () => {
+    return (
+        <div>
+            <h2>Login</h2>
+            <button>
+            <Link to="/kibhu"> Entrar </Link>
+            </button>
+        </div>
+    )
 }
 
+export default Login 

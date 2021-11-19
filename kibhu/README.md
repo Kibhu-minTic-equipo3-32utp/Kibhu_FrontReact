@@ -6,6 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Comandos usados
 `npm install`
 `npm install react-bootstrap bootstrap@5.1.3`
+`npm install history@5 react-router-dom@6`
 
 
 ## Available Scripts
