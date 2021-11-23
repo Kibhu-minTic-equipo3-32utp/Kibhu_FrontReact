@@ -1,10 +1,15 @@
+import { Link, Outlet } from "react-router-dom";
 
 
 function Kibhu() {
     return (
         <div>
-            <h1>Kibhu</h1>
+            <header>
+            <Link to="/kibhu/clientes">clientes</Link>
+            <Outlet />
+            </header>
         </div>
+        
     )
 }
 export default Kibhu;
