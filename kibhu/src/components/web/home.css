@@ -31,3 +31,25 @@ ul a :active:hover {
 #inicio {
     padding-top: 100px;
 }
+
+ul.breadcrumb {
+    padding: 10px 16px;
+    list-style: none;
+    background-color: white;
+}
+
+ul.breadcrumb li {
+    display: inline;
+    font-size: 18px;
+}
+
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    color: black;
+    content: "/\00a0";
+}
+
+ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}

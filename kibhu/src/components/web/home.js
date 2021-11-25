@@ -9,10 +9,11 @@ import './home.css';
 
 function Home() {
     return (
+        
         <div>
             <div class="principal">
                 <div class="header-menu">
-                    <ul>
+                    <ul class="breadcrumb">
                         <li><a href="#inicio">Inicio</a></li>
                         <li><a href="#servicios">Servicios</a></li>
                         <li><a href="#sobre-nosotros">Sobre nosotros</a></li>
