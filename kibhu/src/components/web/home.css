@@ -1,0 +1,33 @@
+ul {
+    float: right;
+    margin-right: 20px;
+    margin-top: 15px;
+}
+
+ul li {
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+
+ul li a {
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+
+ul a:hover {
+    text-decoration: none;
+    color: #fff;
+    background-color: #daa520;
+}
+
+ul a :active:hover {
+    transition: all 0.2s ease-in-out;
+}
+
+#inicio {
+    padding-top: 100px;
+}
