@@ -28,10 +28,6 @@ ul a :active:hover {
     transition: all 0.2s ease-in-out;
 }
 
-#inicio {
-    padding-top: 100px;
-}
-
 ul.breadcrumb {
     padding: 10px 16px;
     list-style: none;
@@ -52,4 +48,9 @@ ul.breadcrumb li+li:before {
 ul.breadcrumb li a {
     color: #0275d8;
     text-decoration: none;
+}
+
+img {
+    height: 130px;
+    width: 130px;
 }

@@ -6,6 +6,7 @@ import Servicios from "./services";
 import Team from "./team";
 import { Link } from "react-router-dom"
 import './home.css';
+import logo from '../../assets/ModoHorizontal.jpg';
 
 function Home() {
     return (
@@ -13,6 +14,7 @@ function Home() {
         <div>
             <div class="principal">
                 <div class="header-menu">
+                <img src={logo}></img>
                     <ul class="breadcrumb">
                         <li><a href="#inicio">Inicio</a></li>
                         <li><a href="#servicios">Servicios</a></li>
