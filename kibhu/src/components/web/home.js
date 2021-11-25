@@ -4,7 +4,6 @@ import News from "./news";
 import Precios from "./prices";
 import Servicios from "./services";
 import Team from "./team";
-import { Link } from "react-router-dom"
 import './home.css';
 import logo from '../../assets/ModoHorizontal.jpg';
 
