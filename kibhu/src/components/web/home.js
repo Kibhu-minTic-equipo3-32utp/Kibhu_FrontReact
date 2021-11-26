@@ -6,6 +6,7 @@ import Servicios from "./services";
 import Team from "./team";
 import './home.css';
 import logo from '../../assets/ModoHorizontal.jpg';
+import Footer from "./footer";
 
 function Home() {
     return (
@@ -43,6 +44,9 @@ function Home() {
             <section id="sobre-nosotros">
                 <Team />
             </section>
+            <div class="footerp">
+            <Footer />
+            </div>
         </div>
     )
 }
