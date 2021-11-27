@@ -2,7 +2,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Route, Routes} from 'react-router-dom';
 import Kibhu from './components/app/kibju';
-import Clientes from './components/app/clientes';
+import Clientes from './components/app/clientes/clientes';
 
 import Home from './components/web/home';
 
