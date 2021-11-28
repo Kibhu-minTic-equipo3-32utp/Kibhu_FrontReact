@@ -30,7 +30,9 @@ const ClientTable= (props) => {
                             <td>{client.mail}</td>
                             <td>{client.contact}</td>
                             <td>
-                            <button> Edit</button>
+                            <button
+                                onClick={()  =>  {props.editRow(client)}}
+                            > Edit</button>
                             <button
                                 onClick={() => {props.deleteClient(client.identification)}}
                             > 

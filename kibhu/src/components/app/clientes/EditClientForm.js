@@ -14,16 +14,27 @@ import { ErrorMessage } from '@hookform/error-message';
 
 
 
-const AddClientForm = (props) => {
+const EditClientForm = (props) => {
 
-    const {register, handleSubmit, formState: { errors }} = useForm();
+
+    const {register, handleSubmit, setValue, formState: { errors }} = useForm({
+        defaultValues: props.currentClient
+    });
+
+    setValue('firstname', props.currentClient.firstname);
+    setValue('lastname', props.currentClient.lastname);
+    setValue('contact', props.currentClient.contact);
+    setValue('mail', props.currentClient.mail);
+    setValue('typeid', props.currentClient.typeid);
+    setValue('identification', props.currentClient.identification);
+
 
     const onSubmit = (data, e) => {
 
         console.log(data)
-        
-        props.addClient(data)
-        //pa limpiar los campos
+
+        props.updateClient(props.currentClient.identification, data);
+
         e.target.reset();
     }
 
@@ -38,12 +49,7 @@ const AddClientForm = (props) => {
                         required: "Nombre requerido",
                     })}
                 />
-                <ErrorMessage errors={errors} name="firstname" />
-                <ErrorMessage
-                    errors={errors}
-                    name="firstname"
-                    render={({message})  => <p>{message}</p> }
-                />
+                
                 <FormControl
                     type="text" lastname="lastname" 
                     {...register("lastname", {
@@ -133,9 +139,9 @@ const AddClientForm = (props) => {
             />
             </FormGroup>
             
-            <button> Agregar nuevo cliente</button>
+            <button> Editar cliente</button>
         </Form>
     );
 }
 
-export default AddClientForm;
+export default EditClientForm;
