@@ -9,7 +9,7 @@ import acosta from "../../assets/Acosta.jpg";
 import daniel from "../../assets/Daniel.jpg";
 import dosman from "../../assets/Dosman.jpg";
 import myriam from "../../assets/Myriam.jpeg";
-import juan from "../../assets/Acosta.jpg";
+import juan from "../../assets/Bastidas.jpg";
 
 export default class Team extends Component {
   render() {
