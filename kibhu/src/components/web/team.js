@@ -23,10 +23,6 @@ export default class Team extends Component {
         <br></br>
         <br></br>
         <Container>
-          <Row>
-            <Col sm={8}>sm=8</Col>
-            <Col sm={4}>sm=4</Col>
-          </Row>
           <div class="row">
             <div class="slider">
               <div class="card">
