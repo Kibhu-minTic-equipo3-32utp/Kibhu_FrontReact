@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
+
+* {
+  margin: 0;
+  padding: auto;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.col {
+  margin: 10px;
+}
+
+html,
+body {
+  display: grid;
+  height: 100%;
+  place-items: center;
+  text-align: center;
+  background: #f2f2f2;
+}
+
+.slider {
+  max-width: 400px;
+  display: flex;
+}
+
+.slider .card {
+  background: #fff;
+  flex: 1;
+  margin: 10px;
+}
+.slider .card .img {
+  height: 500px;
+  width: 100%;
+}
+
+.slider .card .img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.slider .card .content {
+  padding: 10px 20px;
+}
+
+.card .content .title {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.card .content .sub-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #daa520;
+  line-height: 20px;
+}
+
+.card .content p {
+  text-align: justify;
+  margin: 10px 0;
+}
+
+.card .content .btn {
+  display: block;
+  text-align: left;
+  margin: 10px 0;
+}
+
+.card .content .btn button {
+  background: #daa520;
+  color: #fff;
+  border: none;
+  outline: none;
+  font-size: 17px;
+  padding: 5px 8px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.card .content .btn button:hover {
+  transform: scale(0.9);
+}
+
+h1,
+h5 {
+  text-align: center;
+  font-weight: bold;
+}
+
+.fontgray {
+  color: dimgray;
+}
+
+.card-body {
+  text-align: center;
+}
+/* SERVICIOS  */
+
+.title {
+  font-weight: bold;
+}
+
+.sub-title {
+  font-weight: bold;
+}
+
+/*header footer */
+.fixed-header {
+  top: 0;
+}
+.fixed-footer {
+  bottom: 0;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+  padding: 7px 25px;
+  display: inline-block;
+}
+.container p {
+  line-height: 200px;
+}

@@ -2,14 +2,13 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-
 ## Comandos usados
+
 `npm install`
 `npm install react-bootstrap bootstrap@5.1.3`
 `npm install history@5 react-router-dom@6`
 `npm install react-hook-form`
 `npm install @hookform/error-message`
-
 
 ## Available Scripts
 
