@@ -5,6 +5,7 @@ import Kibhu from './components/app/kibju';
 import Clientes from './components/app/clientes/clientes';
 
 import Home from './components/web/home';
+import Supliers from './components/app/proveedores/proveedores';
 
 
 function App() {
@@ -13,6 +14,7 @@ function App() {
       <Route path="/" element={<Home/>}/>
       <Route path="kibhu" element={<Kibhu/>}>
         <Route path="clientes" element={<Clientes/>}/>
+        <Route path="proveedores" element={<Supliers/>}/>
       </Route>
     </Routes>
   );
