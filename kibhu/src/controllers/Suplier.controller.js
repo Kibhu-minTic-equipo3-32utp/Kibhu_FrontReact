@@ -1,12 +1,22 @@
-import { createContext, useState} from 'react';
+import { createContext, useState, useEffect} from 'react';
 import { apiSuplier } from './Apis';
 
 const SuplierContext = createContext("");
 
 const SuplierProvider = ({children})=>{
 
-    const handleCreate = (objSuplier) => {
-        console.log("registrar", objSuplier);
+    const handleCreate = async (objSuplier) => {
+        const resp = await fetch(apiSuplier, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(objSuplier)
+        })
+        if (resp.status === 201){
+            getSupliers();
+        }
+        return resp;
     }
     const [supliers, setSupliers] = useState( [] );
     useEffect(()=>{

@@ -3,9 +3,10 @@ import './App.css';
 import { Route, Routes} from 'react-router-dom';
 import Kibhu from './components/app/kibju';
 import Clientes from './components/app/clientes/clientes';
+import Supliers from './components/app/proveedores/proveedores';
+
 
 import Home from './components/web/home';
-import Supliers from './components/app/proveedores/proveedores';
 
 
 function App() {

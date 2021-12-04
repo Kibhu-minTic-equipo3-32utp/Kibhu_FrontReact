@@ -5,7 +5,7 @@ import FormGroup from 'react-bootstrap/esm/FormGroup';
 import FormLabel from 'react-bootstrap/esm/FormLabel';
 import FormControl from 'react-bootstrap/esm/FormControl';
 
-/*  
+
 
 const objForm = {
     name: "",
@@ -83,4 +83,3 @@ const SupliersForm = () => {
 }
 
 export default SupliersForm
-*/

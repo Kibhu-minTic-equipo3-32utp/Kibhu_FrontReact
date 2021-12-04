@@ -4,16 +4,16 @@ import SupliersForm from './proveedoresform';
 import SuplierTable from './proveedorestabla';
 
 const Suplier = () => {
-    /*  const { supliers } = useContext(SuplierContext);*/
+    const { supliers } = useContext(SuplierContext);
     return (
         <div>
             <h1>Proveedores</h1>
-            {/*<SupliersForm/>
+            <SupliersForm/>
             <div className="supTab"> 
                 {supliers.map((e) => (
                     <li key={e.ruc}> {e.name}  </li>
                 ))}
-            </div> */}
+            </div> 
         </div>
         
     )

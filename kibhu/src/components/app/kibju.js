@@ -1,19 +1,18 @@
 import { Link, Outlet } from "react-router-dom";
+import { SuplierProvider } from "../../controllers/Suplier.controller";
 
 
 function Kibhu() {
     return (
-        <div>
+        <>
             <header>
-            <Link to="/kibhu/clientes">clientes</Link>
-            <Link to="/kibhu/proveedores">proveedores</Link>
-            <Outlet />
+            <Link to="/clientes">clientes</Link>
+            <Link to="/proveedores">proveedores</Link>
             </header>
-            <header>
-            <Link to="/kibhu/usuarios">usuarios</Link>
+            <SuplierProvider> 
             <Outlet />
-            </header>
-        </div>
+            </SuplierProvider>
+        </>
         
     )
 }

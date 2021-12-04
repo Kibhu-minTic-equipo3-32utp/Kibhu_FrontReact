@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useContext, useState} from 'react';
+import ClientContext from '../../../controllers/Client.controller';
+
 import Container from 'react-bootstrap/Container';
 import Table from 'react-bootstrap/Table';
 
-const ClientTable= (props) => {
-    console.log(props.clients)
+const ClientTable= ({objClient}) => {
     return (
         <Container fluid>
             <Table striped bordered hover variant="dark">
@@ -20,27 +21,26 @@ const ClientTable= (props) => {
                 </thead>
                 <tbody>
                 {
-                    props.clients.length > 0 ?
-                    props.clients.map(client =>(
-                        <tr key={client.identification}>
-                            <td>{client.firstname}</td>
-                            <td>{client.lastname}</td>
-                            <td>{client.typeid}</td>
-                            <td>{client.identification}</td>
-                            <td>{client.mail}</td>
-                            <td>{client.contact}</td>
+                    objClient.length > 0 ?
+                        (<tr key={objClient.identification}>
+                            <td>{objClient.firstname}</td>
+                            <td>{objClient.lastname}</td>
+                            <td>{objClient.typeid}</td>
+                            <td>{objClient.identification}</td>
+                            <td>{objClient.mail}</td>
+                            <td>{objClient.contact}</td>
                             <td>
                             <button
-                                onClick={()  =>  {props.editRow(client)}}
+                                /* onClick={()  =>  {props.editRow(objClient)}} */
                             > Edit</button>
                             <button
-                                onClick={() => {props.deleteClient(client.identification)}}
+                                /*  onClick={() => {props.deleteClient(objClient.identification)}}*/
                             > 
                                 Delete
                             </button>
                             </td>
                         </tr>
-                    )) : (
+                    ) : (
                         <tr>
                             <td colSpan={7}>No hay clientes</td>
                         </tr>
