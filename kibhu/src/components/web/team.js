@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import "./team.css";
 import Badge from "react-bootstrap/Badge";
 import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-
 import acosta from "../../assets/Acosta.jpg";
 import daniel from "../../assets/Daniel.jpg";
 import dosman from "../../assets/Dosman.jpg";
