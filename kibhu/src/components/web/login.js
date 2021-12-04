@@ -5,9 +5,9 @@ import { Form } from "react-bootstrap"
 
 const Login = () => {
     return (
-        <div>
+        <div className="lgn">
             <h2 className="text-center">Login</h2>
-            <Form>
+            <Form className="usuario">
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Usuario</Form.Label>
                     <Form.Control type="user" placeholder="Ingrese Usuario"/>
@@ -20,7 +20,7 @@ const Login = () => {
                     <Form.Check type="checkbox" label="Recuerdame" />
                 </Form.Group>
             </Form>
-            <button>
+            <button variant=" primary btn-lock" type="submit">
                 <Link to="/kibhu"> Entrar </Link>
             </button>
         </div>
