@@ -14,8 +14,8 @@ import juan from "../../assets/Bastidas.jpg";
 export default class Team extends Component {
   render() {
     return (
-      <div classame="Team">
-        <h1 class="text-center">
+      <div className="Team">
+        <h1 className="titulo">
           <Badge pill bg="secondary">
             EQUIPO SCRUM
           </Badge>{" "}
@@ -23,84 +23,86 @@ export default class Team extends Component {
         <br></br>
         <br></br>
         <Container>
-          <div class="row">
-            <div class="slider">
-              <div class="card">
-                <div class="img">
+          <div classNameName="row">
+            <div className="slider">
+              <div className="card">
+                <div className="img">
                   <img src={acosta} alt="Andres Acosta"></img>
                 </div>
-                <div class="content">
-                  <div class="title">Andrés Acosta</div>
-                  <div class="sub-title">Full Stack Developer</div>
-                  <p class="card-text">
+                <div className="content">
+                  <div className="title">Andrés Acosta</div>
+                  <div className="sub-title">Full Stack Developer</div>
+                  <p className="card-text">
                     Cursando la Tecnología en Desarrollo de Software, y
                     mejorando conocimientos de programación con MinTic2022.
                     <br />
                     <br />
-                    <label class="fontgray">acostabuitrago0123@gmail.com</label>
+                    <label className="fontgray">
+                      acostabuitrago0123@gmail.com
+                    </label>
                   </p>
-                  <div class="btn">
+                  <div className="btn">
                     <button>Contacto</button>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="slider">
-              <div class="card">
-                <div class="img">
+            <div className="slider">
+              <div className="card">
+                <div className="img">
                   <img src={dosman} alt="Jhon Dosman"></img>
                 </div>
-                <div class="content">
-                  <div class="title">Jhon Dosman</div>
-                  <div class="sub-title">Desarrollador back-end</div>
-                  <p class="card-text">
+                <div className="content">
+                  <div className="title">Jhon Dosman</div>
+                  <div className="sub-title">Desarrollador back-end</div>
+                  <p className="card-text">
                     Cursando Tecnología en Sistemas y adquiriendo conocimientos
                     en programación con Mintic2022.
                     <br />
                     <br />
-                    <label class="fontgray">
+                    <label className="fontgray">
                       dosman.diazjhon4166@gmail.com
                     </label>
                   </p>
-                  <div class="btn">
+                  <div className="btn">
                     <button>Contacto</button>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="slider">
-              <div class="card">
-                <div class="img">
+            <div className="slider">
+              <div className="card">
+                <div className="img">
                   <img src={daniel} alt="Daniel Arias"></img>
                 </div>
-                <div class="content">
-                  <div class="title">Daniel Arias</div>
-                  <div class="sub-title">Full Stack Developer</div>
-                  <p class="card-text">
+                <div className="content">
+                  <div className="title">Daniel Arias</div>
+                  <div className="sub-title">Full Stack Developer</div>
+                  <p className="card-text">
                     Economista al que se le atravesó el deseo de aprender a
                     programar con el programa MinTic2022.
                     <br />
                     <br />
-                    <label class="fontgray">alejolarias542@gmail.com</label>
+                    <label className="fontgray">alejolarias542@gmail.com</label>
                   </p>
-                  <div class="btn">
+                  <div className="btn">
                     <button>Contacto</button>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="slider">
-              <div class="card">
-                <div class="img">
+            <div className="slider">
+              <div className="card">
+                <div className="img">
                   <img src={myriam} alt="Myriam Hernandez"></img>
                 </div>
-                <div class="content">
-                  <div class="title">Myriam Hernandez</div>
-                  <div class="sub-title">Senior Analyst</div>
-                  <p class="card-text">
+                <div className="content">
+                  <div className="title">Myriam Hernandez</div>
+                  <div className="sub-title">Senior Analyst</div>
+                  <p className="card-text">
                     Ingeniera Electrónica integral, comprometida y preparada
                     para diseño de sistemas de optimización de procesos
                     industriales, amplia experiencia en pruebas calidad de
@@ -108,31 +110,31 @@ export default class Team extends Component {
                     negocio BPMN.
                     <br />
                     <br />
-                    <label class="fontgray">myriam.hdez@gmail.com</label>
+                    <label className="fontgray">myriam.hdez@gmail.com</label>
                   </p>
-                  <div class="btn">
+                  <div className="btn">
                     <button>Contacto</button>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div class="slider">
-              <div class="card">
-                <div class="img">
+            <div className="slider">
+              <div className="card">
+                <div className="img">
                   <img src={juan} alt="Juan Mendez"></img>
                 </div>
-                <div class="content">
-                  <div class="title">Juan Mendez</div>
-                  <div class="sub-title">Full Stack Developer</div>
-                  <p class="card-text">
+                <div className="content">
+                  <div className="title">Juan Mendez</div>
+                  <div className="sub-title">Full Stack Developer</div>
+                  <p className="card-text">
                     Diseñador Gráfico y músico, proceso formativo como full
                     stack developer y aprendiendo con el programa MinTic2022.
                     <br />
                     <br />
-                    <label class="fontgray">juan10cmendez@gmail.com</label>
+                    <label className="fontgray">juan10cmendez@gmail.com</label>
                   </p>
-                  <div class="btn">
+                  <div className="btn">
                     <button>Contacto</button>
                   </div>
                 </div>
