@@ -2,7 +2,7 @@ import React from 'react'
 import {Route, Routes} from 'react-router-dom';
 import Home from '../components/web/home';
 
-const Unauthrouter = () => {
+const UnauthRouter = () => {
     return (
         <Routes>
             <Route path="/" element={<Home/>}/>
@@ -10,4 +10,4 @@ const Unauthrouter = () => {
     )
 }
 
-export default Unauthrouter;
+export default UnauthRouter;

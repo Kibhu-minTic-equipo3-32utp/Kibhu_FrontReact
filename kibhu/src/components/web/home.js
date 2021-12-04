@@ -8,7 +8,7 @@ import './home.css';
 import logo from '../../assets/ModoHorizontal.jpg';
 import Footer from "./footer";
 
-function Home() {
+const Home = () => {
     return (
         
         <div>
@@ -23,7 +23,7 @@ function Home() {
                     </ul>
                 </div>
             </div>
-            <Header />
+
             <br />
             <section id="inicio">
                 <Login />

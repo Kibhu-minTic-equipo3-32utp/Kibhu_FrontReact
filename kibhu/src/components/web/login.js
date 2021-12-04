@@ -1,30 +1,74 @@
-import { Link } from "react-router-dom"
+import React, { useContext, useState} from 'react';
+import AuthController from '../../controllers/Auth.controller';
+
 import { Form } from "react-bootstrap"
 
-
+const objForm = {
+    username: "",
+    password: "",
+};
 
 const Login = () => {
+
+
+    const { handleLogin } = useContext(AuthController);
+
+    const [form, setForm] = useState(objForm);
+    const [show, setShow] = useState(false);
+
+    const handleForm = (e) => {
+        setForm({...form, [e.target.name]: e.target.value});
+    }
+
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        handleLogin(form).then((status) => {
+            if (status === 200) {
+                setForm(objForm);
+                setShow(false);
+            } else {
+                setShow(true);
+            }
+        });
+    }
     return (
         <div className="lgn">
             <h2 className="text-center">Login</h2>
-            <Form className="usuario">
+            <alert show={show}>  CREDENCIALES INVALIDAS </alert>
+            <Form onSubmit={handleSubmit} className="usuario">
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Usuario</Form.Label>
-                    <Form.Control type="user" placeholder="Ingrese Usuario"/>
+                    <Form.Control 
+                    value={form.email}
+                    onChange={handleForm}
+                    name="username"
+                    type="username" 
+                    placeholder="Ingrese Usuario"
+                    required
+                    />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Contraseña</Form.Label>
-                    <Form.Control type="password" placeholder="Ingrese Contraseña" />
+                    <Form.Control 
+                    value={form.password}
+                    onChange={handleForm}
+                    name="password"
+                    type="password" 
+                    placeholder="Ingrese Contraseña"
+                    required
+                    />
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox" label="Recuerdame" />
                 </Form.Group>
-            </Form>
-            <button variant=" primary btn-lock" type="submit">
-                <Link to="/kibhu"> Entrar </Link>
+
+                <button variant=" primary btn-lock" type="submit">
+                Login
             </button>
+            </Form>
+            
         </div>
     )
 }
 
-export default Login
+export default Login;

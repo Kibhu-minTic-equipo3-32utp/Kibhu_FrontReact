@@ -5,7 +5,7 @@ import Clientes from '../components/app/clientes/clientes';
 import Supliers from '../components/app/proveedores/proveedores';
 
 
-const authrouter = () => {
+const Authrouter = () => {
     return(
         <Routes>
             <Route path="/" element={< Kibhu />}>
@@ -18,4 +18,4 @@ const authrouter = () => {
 
 }
 
-export default authrouter
+export default Authrouter
