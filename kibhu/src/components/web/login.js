@@ -1,7 +1,7 @@
 import React, { useContext, useState} from 'react';
 import AuthController from '../../controllers/Auth.controller';
 
-import { Form } from "react-bootstrap"
+import { Alert, Container, Form } from "react-bootstrap"
 
 const objForm = {
     username: "",
@@ -33,8 +33,9 @@ const Login = () => {
     }
     return (
         <div className="lgn">
+            <Container>
             <h2 className="text-center">Login</h2>
-            <alert show={show}>  CREDENCIALES INVALIDAS </alert>
+            <Alert show={show} variant="warning"> CREDENCIALES INVALIDAS</Alert>
             <Form onSubmit={handleSubmit} className="usuario">
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Usuario</Form.Label>
@@ -66,7 +67,7 @@ const Login = () => {
                 Login
             </button>
             </Form>
-            
+            </Container>
         </div>
     )
 }
