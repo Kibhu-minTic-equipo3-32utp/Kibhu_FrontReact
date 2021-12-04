@@ -8,7 +8,7 @@ export default class Footer extends Component {
   render() {
     return (
       <div className="mainfooter">
-        <div class="kibhufooter">
+        <div className="kibhufooter">
           <h5> MinTic2022 Grupo32-03, ©Kibhu 2021 </h5>
         </div>
         <div class="socialFooter">

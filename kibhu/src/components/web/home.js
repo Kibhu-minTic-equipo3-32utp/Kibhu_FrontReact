@@ -5,7 +5,7 @@ import Precios from "./prices";
 import Servicios from "./services";
 import Team from "./team";
 import "./home.css";
-import logo from "../../assets/Logo pequeño Kibhu-02.png";
+import logo from "../../assets/logo pequeño kibhu new.png";
 import Footer from "./footer";
 
 const Home = () => {
@@ -13,7 +13,7 @@ const Home = () => {
     <div>
       <div class="principal">
         <div class="header-menu">
-          <img src={logo}></img>
+          <img src={logo} className="logoo"></img>
           <ul class="breadcrumb">
             <li>
               <a href="#inicio">Inicio</a>

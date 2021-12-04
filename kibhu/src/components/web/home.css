@@ -47,9 +47,10 @@ ul.breadcrumb li a {
   text-decoration: none;
 }
 
-img {
-  height: 130px;
-  width: 130px;
+.logoo {
+  height: 40px;
+  width: 150px;
+  margin: 20px;
 }
 
 .footerp {
