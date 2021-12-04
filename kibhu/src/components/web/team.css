@@ -9,20 +9,18 @@
 }
 
 .Team {
-  display: grid;
   height: 100%;
   place-items: center;
   text-align: center;
+  align-items: center;
 }
 
 .slider {
   max-width: 400px;
-  display: flex;
 }
 
 .slider .card {
   background: #fff;
-  flex: 1;
   margin: 10px;
 }
 .slider .card .img {
