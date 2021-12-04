@@ -8,17 +8,16 @@
   font-family: "Poppins", sans-serif;
 }
 
-.col {
-  margin: 10px;
+.mainfooter {
+  background: #f2f2f2;
+  padding: 30px;
 }
 
-html,
-body {
+.Team {
   display: grid;
   height: 100%;
   place-items: center;
   text-align: center;
-  background: #f2f2f2;
 }
 
 .slider {
@@ -114,11 +113,4 @@ h5 {
 }
 .fixed-footer {
   bottom: 0;
-}
-
-nav a {
-  color: #fff;
-  text-decoration: none;
-  padding: 7px 25px;
-  display: inline-block;
 }

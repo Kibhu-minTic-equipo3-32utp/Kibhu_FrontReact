@@ -1,60 +1,61 @@
 ul {
-    float: right;
-    margin-right: 20px;
-    margin-top: 15px;
+  float: right;
+  margin-right: 20px;
+  margin-top: 15px;
 }
 
 ul li {
-    display: inline-block;
-    line-height: 80px;
-    margin: 0 5px;
+  display: inline-block;
+  margin: 0 5px;
 }
 
 ul li a {
-    color: rgb(0, 0, 0);
-    font-size: 15px;
-    padding: 7px 13px;
-    border-radius: 3px;
-    text-transform: uppercase;
+  color: rgb(0, 0, 0);
+  font-size: 18px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
 }
 
 ul a:hover {
-    text-decoration: none;
-    color: #fff;
-    background-color: #daa520;
+  text-decoration: none;
+  color: #fff;
+  background-color: #daa520;
 }
 
 ul a :active:hover {
-    transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 
 ul.breadcrumb {
-    padding: 10px 16px;
-    list-style: none;
-    background-color: white;
+  padding: 10px 16px;
+  list-style: none;
 }
 
 ul.breadcrumb li {
-    display: inline;
-    font-size: 18px;
+  display: inline;
 }
-
-ul.breadcrumb li+li:before {
-    padding: 8px;
-    color: black;
-    content: "/\00a0";
+/*
+ul.breadcrumb li + li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
 }
-
+*/
 ul.breadcrumb li a {
-    color: #0275d8;
-    text-decoration: none;
+  color: #000;
+  text-decoration: none;
 }
 
 img {
-    height: 130px;
-    width: 130px;
+  height: 130px;
+  width: 130px;
 }
 
-.footerp{
-    padding-top: 100px;
+.footerp {
+  padding-top: 100px;
+}
+
+.header-menu {
+  background: #f2f2f2;
 }
