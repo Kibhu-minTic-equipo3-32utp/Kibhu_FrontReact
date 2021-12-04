@@ -9,6 +9,10 @@ function Kibhu() {
             <Link to="/kibhu/proveedores">proveedores</Link>
             <Outlet />
             </header>
+            <header>
+            <Link to="/kibhu/usuarios">usuarios</Link>
+            <Outlet />
+            </header>
         </div>
         
     )
