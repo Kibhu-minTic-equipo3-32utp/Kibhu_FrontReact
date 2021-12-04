@@ -101,9 +101,11 @@ export default class Team extends Component {
                   <div class="title">Myriam Hernandez</div>
                   <div class="sub-title">Senior Analyst</div>
                   <p class="card-text">
-                    Ingeniera Electrónica integral, con amplia experiencia en
-                    pruebas calidad de software, modelamiento y automatización
-                    de procesos de negocio BPMN.
+                    Ingeniera Electrónica integral, comprometida y preparada
+                    para diseño de sistemas de optimización de procesos
+                    industriales, amplia experiencia en pruebas calidad de
+                    software, modelamiento y automatización de procesos de
+                    negocio BPMN.
                     <br />
                     <br />
                     <label class="fontgray">myriam.hdez@gmail.com</label>

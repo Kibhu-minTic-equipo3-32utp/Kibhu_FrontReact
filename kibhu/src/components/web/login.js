@@ -10,7 +10,7 @@ const Login = () => {
             <Form>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Usuario</Form.Label>
-                    <Form.Control className="" type="user" placeholder="Ingrese Usuario" />
+                    <Form.Control type="user" placeholder="Ingrese Usuario"/>
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                     <Form.Label>Contraseña</Form.Label>
