@@ -15,7 +15,9 @@ function Kibhu() {
       <header>
         <div class="principal">
           <div class="header-menu">
-            <img src={logo} className="logoo"></img>
+            <Link to="/">
+              <img src={logo} className="logoo"></img>
+            </Link>
             <ul class="breadcrumb">
               <li>
                 <Link to="/productos">Productos</Link>
