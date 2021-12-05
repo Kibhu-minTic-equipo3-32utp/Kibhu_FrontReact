@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, Outlet } from "react-router-dom";
 import AuthContext from "../../controllers/Auth.controller";
+import { ClientProvider } from "../../controllers/Client.controller";
 import { SuplierProvider } from "../../controllers/Suplier.controller";
 import logo from "../../assets/logo pequeño kibhu new.png";
 
@@ -36,7 +37,10 @@ function Kibhu() {
         </div>
       </header>
       <SuplierProvider>
+      <ClientProvider>
+                
         <Outlet />
+        </ClientProvider>
       </SuplierProvider>
       <br></br>
       <br></br>

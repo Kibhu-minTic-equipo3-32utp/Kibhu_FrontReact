@@ -1,60 +1,78 @@
-import React from 'react'
+import React, { useEffect, useState} from 'react'
 //elementos de bootstrap
-import Form from 'react-bootstrap/Form';
+/*  import Form from 'react-bootstrap/Form';
 import FormGroup from 'react-bootstrap/esm/FormGroup';
 import FormLabel from 'react-bootstrap/esm/FormLabel';
 import FormControl from 'react-bootstrap/esm/FormControl';
 import InputGroup from 'react-bootstrap/InputGroup';
-import FormSelect from 'react-bootstrap/esm/FormSelect';
+import FormSelect from 'react-bootstrap/esm/FormSelect';*/
+import {Form, Modal, Button, InputGroup} from 'react-bootstrap'
+
 
 //elementos para el formulario
 import {useForm} from 'react-hook-form';
 import { ErrorMessage } from '@hookform/error-message';
 
+const objForm = {
+    firstname: '',
+    lastname: '',
+    mail: '',
+    contact: '',
+    identification: '',
+    typeid: ''
+}
 
 
-
-const EditClientForm = (props) => {
-
-
-    const {register, handleSubmit, setValue, formState: { errors }} = useForm({
-        defaultValues: props.currentClient
-    });
-
-    setValue('firstname', props.currentClient.firstname);
-    setValue('lastname', props.currentClient.lastname);
-    setValue('contact', props.currentClient.contact);
-    setValue('mail', props.currentClient.mail);
-    setValue('typeid', props.currentClient.typeid);
-    setValue('identification', props.currentClient.identification);
+const EditClientForm = ({show, handleClose, objClient, handleUpdate}) => {
 
 
-    const onSubmit = (data, e) => {
+    const { formState: { errors }} = useForm();
 
-        console.log(data)
+    const [form, setForm] = useState(objForm);
 
-        props.updateClient(props.currentClient.identification, data);
+    useEffect(()  => {
+        setForm({
+            firstname: objClient.firstname,
+            lastname: objClient.lastname,
+            mail: objClient.mail,
+            contact: objClient.contact,
+            identification: objClient.identification,
+            typeid: objClient.typeid
+        })
+    }, [objClient])
 
-        e.target.reset();
+    const handleForm = (e) => {
+        setForm({ ...form, [e.target.name]: e.target.value});
+    };
+
+    const handleEdit = () => {
+        handleUpdate(form);
+        setForm(objForm);
+        handleClose();
     }
 
-    return (
-        <Form onSubmit={handleSubmit(onSubmit)}>
 
+    
+
+    return (
+        <Modal show={show} onHide={handleClose}>
+            <Modal.Header closeButton>
+                <Modal.Title>Cliente</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+        <Form>
             <InputGroup className="mb-3"> 
                 <InputGroup.Text>  Nombre y Apellido</InputGroup.Text>
-                <FormControl
-                    type="text" firstname="firstname" 
-                    {...register("firstname", {
-                        required: "Nombre requerido",
-                    })}
+                <Form.Control
+                    type="text" name="firstname" placeholder="Nombre " value={form.firstname} onChange={handleForm} required
                 />
-                
-                <FormControl
-                    type="text" lastname="lastname" 
-                    {...register("lastname", {
-                        required: "Apellido requerido",
-                    })}
+                <ErrorMessage errors={errors}  />
+                <ErrorMessage
+                    errors={errors}
+                    render={({message})  => <p>{message}</p> }
+                />
+                <Form.Control
+                    type="text" name="lastname" placeholder="Apellido " value={form.lastname} onChange={handleForm} required
                 />
                 <ErrorMessage errors={errors} name="lastname" />
                 <ErrorMessage
@@ -64,19 +82,18 @@ const EditClientForm = (props) => {
                 />
             </InputGroup>
 
-            <FormGroup>
-            <FormLabel>Tipo de Id </FormLabel>
-            <FormSelect 
-            aria-label="Default select example"
-            type="select" typeid="typeid"  
-            {...register("typeid", {
-                required: "Tipo de ID requerida",
-            })}>
+            <Form.Group>
+            <Form.Label>Tipo de Id </Form.Label>
+            <Form.Select  aria-label="Default select example"
+            
+            type="select" name="typeid"  value={form.typeid} onChange={handleForm}  required
+            >
+                <option> Seleccione tipo de ID </option>
                 <option> CC </option>
                 <option> TI </option>
                 <option> Pasaporte </option>
                 <option> NIP </option>
-            </FormSelect>
+            </Form.Select>
             <ErrorMessage errors={errors} name="typeid" />
 
             <ErrorMessage
@@ -84,15 +101,12 @@ const EditClientForm = (props) => {
                 name="typeid"
                 render={({message})  => <p>{message}</p> }
             />
-            </FormGroup>
+            </Form.Group>
 
-            <FormGroup> 
-            <FormLabel>Identificación </FormLabel>
-            <FormControl
-                type="number" identification="identification"  
-            {...register("identification", {
-                required: "Identificación requerida",
-            })}
+            <Form.Group> 
+            <Form.Label>Identificación </Form.Label>
+            <Form.Control
+                type="number" name="identification" placeholder="# Identificación " value={form.identification} onChange={handleForm}  required
             />
             <ErrorMessage errors={errors} name="identification" />
 
@@ -101,17 +115,12 @@ const EditClientForm = (props) => {
                 name="identification"
                 render={({message})  => <p>{message}</p> }
             />
-            </FormGroup>
+            </Form.Group>
 
-            <FormGroup> 
-            <FormLabel>Mail </FormLabel>
-            <FormControl
-                type="mail" mail="mail"  
-            {...register("mail", {
-                required: 'Email is required',
-                pattern: {
-                value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,}
-            })}
+            <Form.Group> 
+            <Form.Label>Mail </Form.Label>
+            <Form.Control
+                type="mail" name="mail" placeholder="Correo Electrónico " value={form.mail} onChange={handleForm} required
             />
             <ErrorMessage errors={errors} name="email" />
 
@@ -120,15 +129,12 @@ const EditClientForm = (props) => {
                 name="email"
                 render={({message})  => <p>{message}</p> }
             />
-            </FormGroup>
+            </Form.Group>
 
-            <FormGroup> 
-            <FormLabel>Contacto </FormLabel>
-            <FormControl
-                type="number" contact="contact"  
-            {...register("contact", {
-                required: "Número de contacto requerid",
-            })}
+            <Form.Group> 
+            <Form.Label>Contacto </Form.Label>
+            <Form.Control
+                type="number" name="contact" placeholder="# Contacto " value={form.contact} onChange={handleForm}  required
             />
             <ErrorMessage errors={errors} name="contact" />
 
@@ -137,10 +143,15 @@ const EditClientForm = (props) => {
                 name="contact"
                 render={({message})  => <p>{message}</p> }
             />
-            </FormGroup>
+            </Form.Group>
             
-            <button> Editar cliente</button>
         </Form>
+        <Modal.Footer>
+            <Button variant="succes" onClick={handleEdit}> Editar Cliente</Button>
+            <Button variant="warning" onClick={handleClose}> CERRAR</Button>
+        </Modal.Footer>
+        </Modal.Body>
+    </Modal>
     );
 }
 

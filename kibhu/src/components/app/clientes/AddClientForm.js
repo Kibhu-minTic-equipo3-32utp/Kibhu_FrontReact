@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext, useState } from 'react'
 //elementos de bootstrap
 import Form from 'react-bootstrap/Form';
 import FormGroup from 'react-bootstrap/esm/FormGroup';
@@ -10,45 +10,54 @@ import FormSelect from 'react-bootstrap/esm/FormSelect';
 //elementos para el formulario
 import {useForm} from 'react-hook-form';
 import { ErrorMessage } from '@hookform/error-message';
+import ClientContext from '../../../controllers/Client.controller';
+
+const objForm = {
+    firstname: '',
+    lastname: '',
+    mail: '',
+    contact: '',
+    identification: '',
+    typeid: ''
+};
 
 
 
+const AddClientForm = () => {
 
-const AddClientForm = (props) => {
+    const {handleCreate} = useContext(ClientContext);
 
-    const {register, handleSubmit, formState: { errors }} = useForm();
+    const [form, setForm] = useState(objForm);
 
-    const onSubmit = (data, e) => {
+    const handleForm = (e) => {
+        setForm({...form, [e.target.name]: e.target.value});
+    };
 
-        console.log(data)
-        
-        props.addClient(data)
-        //pa limpiar los campos
-        e.target.reset();
-    }
+    const { formState: { errors }} = useForm();
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const resp = await handleCreate(form);
+        if (resp.status === 201){
+            setForm(objForm);
+        }
+    };
 
     return (
-        <Form onSubmit={handleSubmit(onSubmit)}>
+        <Form onSubmit={handleSubmit}>
 
             <InputGroup className="mb-3"> 
                 <InputGroup.Text>  Nombre y Apellido</InputGroup.Text>
                 <FormControl
-                    type="text" firstname="firstname" 
-                    {...register("firstname", {
-                        required: "Nombre requerido",
-                    })}
+                    type="text" name="firstname" placeholder="Nombre " value={form.firstname} onChange={handleForm} required
                 />
-                <ErrorMessage errors={errors} name="firstname" />
+                <ErrorMessage errors={errors}  />
                 <ErrorMessage
                     errors={errors}
-                    name="firstname"
                     render={({message})  => <p>{message}</p> }
                 />
                 <FormControl
-                    type="text" lastname="lastname" 
-                    {...register("lastname", {
-                        required: "Apellido requerido",
-                    })}
+                    type="text" name="lastname" placeholder="Apellido " value={form.lastname} onChange={handleForm} required
                 />
                 <ErrorMessage errors={errors} name="lastname" />
                 <ErrorMessage
@@ -60,12 +69,11 @@ const AddClientForm = (props) => {
 
             <FormGroup>
             <FormLabel>Tipo de Id </FormLabel>
-            <FormSelect 
-            aria-label="Default select example"
-            type="select" typeid="typeid"  
-            {...register("typeid", {
-                required: "Tipo de ID requerida",
-            })}>
+            <FormSelect  aria-label="Default select example"
+            
+            type="select" name="typeid"  value={form.typeid} onChange={handleForm}  required
+            >
+                <option> Seleccione tipo de ID </option>
                 <option> CC </option>
                 <option> TI </option>
                 <option> Pasaporte </option>
@@ -83,10 +91,7 @@ const AddClientForm = (props) => {
             <FormGroup> 
             <FormLabel>Identificación </FormLabel>
             <FormControl
-                type="number" identification="identification"  
-            {...register("identification", {
-                required: "Identificación requerida",
-            })}
+                type="number" name="identification" placeholder="# Identificación " value={form.identification} onChange={handleForm}  required
             />
             <ErrorMessage errors={errors} name="identification" />
 
@@ -100,12 +105,7 @@ const AddClientForm = (props) => {
             <FormGroup> 
             <FormLabel>Mail </FormLabel>
             <FormControl
-                type="mail" mail="mail"  
-            {...register("mail", {
-                required: 'Email is required',
-                pattern: {
-                value: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,}
-            })}
+                type="mail" name="mail" placeholder="Correo Electrónico " value={form.mail} onChange={handleForm} required
             />
             <ErrorMessage errors={errors} name="email" />
 
@@ -119,10 +119,7 @@ const AddClientForm = (props) => {
             <FormGroup> 
             <FormLabel>Contacto </FormLabel>
             <FormControl
-                type="number" contact="contact"  
-            {...register("contact", {
-                required: "Número de contacto requerid",
-            })}
+                type="number" name="contact" placeholder="# Contacto " value={form.contact} onChange={handleForm}  required
             />
             <ErrorMessage errors={errors} name="contact" />
 
@@ -133,7 +130,7 @@ const AddClientForm = (props) => {
             />
             </FormGroup>
             
-            <button> Agregar nuevo cliente</button>
+            <button variant="succes" type="submit"> Agregar nuevo cliente</button>
         </Form>
     );
 }

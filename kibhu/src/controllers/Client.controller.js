@@ -8,19 +8,10 @@ const ClientProvider = ({children})=>{
     const [clients, setClients] = useState([]);
 
     useEffect(() => {
-        fetch(apiClient, {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json'
-            }
-        })
-        .then((response) => {
-            setClients(response.data)
-        })
-        
+        getClients();
     }, []);
 
-    /*  const getClients = async () =>{
+    const getClients = async () =>{
         let resp = await fetch(apiClient, {
             method: 'GET',
             headers: {
@@ -32,8 +23,51 @@ const ClientProvider = ({children})=>{
             setClients(json);
         }
         return resp.status;
-    }*/
-    const data = { clients };
+    }
+
+    const handleCreate = async (objClient) => {
+        let resp = await fetch(apiClient, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(objClient)
+        })
+        if (resp.status === 201){
+            getClients();
+        }
+        return resp;
+    }
+
+    const setClient = async(objClient)=>{
+        let resp = await fetch(apiClient, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(objClient)
+        });
+        if (resp.status === 200){
+            getClients();
+        }
+        return resp.status;
+    }
+
+    const deleteClient = async(objClient)=>{
+        let resp = await fetch(apiClient, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(objClient)
+        });
+        if (resp.status === 500){
+            getClients();
+        }
+        return resp.status;
+    }
+
+    const data = { handleCreate, clients, getClients, setClient, deleteClient };
     return <ClientContext.Provider value= {data}>{children}</ClientContext.Provider>
     
     
