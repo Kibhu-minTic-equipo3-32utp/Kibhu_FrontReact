@@ -6,6 +6,7 @@ import ClientTable from './ClientTable';
 import AddClientForm from './AddClientForm';
 import ClientContext from '../../../controllers/Client.controller';
 import ClientHeader from './clientHead';
+import { Table } from 'react-bootstrap';
 
 
 const Clientes = () => {
@@ -20,18 +21,15 @@ const Clientes = () => {
                     <h1><Badge pill bg="secondary">CLIENTES DE KIBHU</Badge></h1>
                     <br></br>
                     <br></br>
-                    
-                    <div>
-                        <ClientHeader/>
+                    <Table striped bordered hover variant="dark">  
+                        
                         {clients.map((e) => (
                             <ClientTable
-                            key={e.identification}
                             objClient={e}
                             edit={true}
                             />
                         ))}
-                        
-                    </div>
+                    </Table>
                 </div>
                 <AddClientForm/>
 
