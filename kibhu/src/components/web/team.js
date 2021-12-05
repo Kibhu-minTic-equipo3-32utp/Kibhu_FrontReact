@@ -32,8 +32,8 @@ export default class Team extends Component {
                     <div className="title">Andrés Acosta</div>
                     <div className="sub-title">Full Stack Developer</div>
                     <p className="card-text">
-                      Cursando la Tecnología en Desarrollo de Software, y
-                      mejorando conocimientos de programación con MinTic2022.
+                      Cursando Tecnología en Desarrollo de Software, adquiriendo
+                      conocimientos de programación con MinTic2022.
                       <br />
                       <br />
                       <label className="fontgray">
@@ -121,8 +121,9 @@ export default class Team extends Component {
                     <div className="sub-title">Full Stack Developer</div>
                     <p className="card-text">
                       Estudiante con conocimientos en energías fósiles y su
-                      extracción que quiere mejorar sus conocimientos en
-                      programación con el programa MinTic2022.
+                      extracción el cual quiere mejorar sus conocimientos en
+                      programación y aplicaciones web con el programa
+                      MinTic2022.
                       <br />
                       <br />
                       <label className="fontgray">

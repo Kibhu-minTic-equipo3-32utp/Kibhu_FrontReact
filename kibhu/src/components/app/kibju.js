@@ -37,9 +37,8 @@ function Kibhu() {
         </div>
       </header>
       <SuplierProvider>
-      <ClientProvider>
-                
-        <Outlet />
+        <ClientProvider>
+          <Outlet />
         </ClientProvider>
       </SuplierProvider>
       <br></br>
@@ -75,7 +74,7 @@ function Kibhu() {
                       <div class="text-xs font-weight-bold text-uppercase mb-1">
                         Usuarios
                       </div>
-                      <p class="bold">4</p>
+                      <p class="bold">5</p>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-user fa-2x text-warning"></i>
@@ -95,7 +94,7 @@ function Kibhu() {
                       <div class="text-xs font-weight-bold text-uppercase mb-1">
                         Clientes
                       </div>
-                      <p class="bold">4</p>
+                      <p class="bold">2</p>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-clipboard-list fa-2x text-warning"></i>
@@ -115,7 +114,7 @@ function Kibhu() {
                       <div class="text-xs font-weight-bold text-uppercase mb-1">
                         Proveedores
                       </div>
-                      <p class="bold">4</p>
+                      <p class="bold">3</p>
                     </div>
                     <div class="col-auto">
                       <i class="fas fa-comments fa-2x text-warning"></i>
