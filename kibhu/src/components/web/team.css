@@ -16,10 +16,17 @@
 }
 
 .slider {
-  max-width: 400px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.carousel {
+  display: flex;
+  align-items: flex-start;
 }
 
 .slider .card {
+  width: 1000px;
   background: #fff;
   margin: 10px;
 }

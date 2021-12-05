@@ -7,7 +7,7 @@ import acosta from "../../assets/Acosta.jpg";
 import daniel from "../../assets/Daniel.jpg";
 import dosman from "../../assets/Dosman.jpg";
 import myriam from "../../assets/Myriam.jpeg";
-import juan from "../../assets/Bastidas.jpg";
+import juan from "../../assets/Mendez.jpg";
 
 export default class Team extends Component {
   render() {
@@ -45,10 +45,6 @@ export default class Team extends Component {
                     </div>
                   </div>
                 </div>
-              </div>
-            </Carousel.Item>
-            <Carousel.Item>
-              <div className="slider">
                 <div className="card">
                   <div className="img">
                     <img src={dosman} alt="Jhon Dosman"></img>
@@ -70,10 +66,6 @@ export default class Team extends Component {
                     </div>
                   </div>
                 </div>
-              </div>
-            </Carousel.Item>
-            <Carousel.Item>
-              <div className="slider">
                 <div className="card">
                   <div className="img">
                     <img src={daniel} alt="Daniel Arias"></img>
@@ -107,11 +99,10 @@ export default class Team extends Component {
                     <div className="title">Myriam Hernandez</div>
                     <div className="sub-title">Senior Analyst</div>
                     <p className="card-text">
-                      Ingeniera Electrónica integral, comprometida y preparada
-                      para diseño de sistemas de optimización de procesos
-                      industriales, amplia experiencia en pruebas calidad de
-                      software, modelamiento y automatización de procesos de
-                      negocio BPMN.
+                      Ingeniera Electrónica integral, diseño de sistemas de
+                      optimización de procesos industriales, experiencia en
+                      pruebas calidad de software, modelamiento y automatización
+                      de procesos de negocio BPMN.
                       <br />
                       <br />
                       <label className="fontgray">myriam.hdez@gmail.com</label>
@@ -121,10 +112,6 @@ export default class Team extends Component {
                     </div>
                   </div>
                 </div>
-              </div>
-            </Carousel.Item>
-            <Carousel.Item>
-              <div className="slider">
                 <div className="card">
                   <div className="img">
                     <img src={juan} alt="Juan Mendez"></img>
@@ -133,8 +120,9 @@ export default class Team extends Component {
                     <div className="title">Juan Mendez</div>
                     <div className="sub-title">Full Stack Developer</div>
                     <p className="card-text">
-                      Diseñador Gráfico y músico, proceso formativo como full
-                      stack developer y aprendiendo con el programa MinTic2022.
+                      Estudiante con conocimientos en energías fósiles y su
+                      extracción que quiere mejorar sus conocimientos en
+                      programación con el programa MinTic2022.
                       <br />
                       <br />
                       <label className="fontgray">
