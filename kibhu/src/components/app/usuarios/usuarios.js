@@ -7,7 +7,7 @@ import AddUserForm from './AddUserForm';
 import EditUserForm from './EditUserForm';
 
 
-export default function Usuarios() {
+const Usuarios = () => {
     const UserData = [
         { firstname: "Jhon", lastname: "Dosman", username: "2man1103", password: "12345" },
         { firstname: "Danniel", lastname: "Arias", username: "dani123", password: "54321" },
@@ -100,3 +100,5 @@ export default function Usuarios() {
             </div>
         );
     }
+
+    export default Usuarios;

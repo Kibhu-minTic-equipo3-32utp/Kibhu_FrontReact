@@ -3,6 +3,8 @@ import { Link, Outlet } from "react-router-dom";
 import AuthContext from "../../controllers/Auth.controller";
 import { ClientProvider } from "../../controllers/Client.controller";
 import { SuplierProvider } from "../../controllers/Suplier.controller";
+import { UserProvider } from "../../controllers/User.controller";
+
 import logo from "../../assets/logo pequeño kibhu new.png";
 
 import Card from "react-bootstrap/Card";
@@ -40,7 +42,9 @@ function Kibhu() {
       </header>
       <SuplierProvider>
         <ClientProvider>
+          <UserProvider>
           <Outlet />
+          </UserProvider>
         </ClientProvider>
       </SuplierProvider>
       <br></br>
