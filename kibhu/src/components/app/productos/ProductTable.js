@@ -30,14 +30,7 @@ const ClientTable = ({ objClient, edit }) => {
 
   return (
     <>
-      <Table
-        striped
-        bordered
-        hover
-        variant="dark"
-        cellPadding={0}
-        cellSpacing={0}
-      >
+      <Table striped bordered hover variant="dark" cellPadding={0} cellSpacing={0}>
         <tbody>
           {clients.length > 0 ? (
             <tr key={objClient.identification}>
