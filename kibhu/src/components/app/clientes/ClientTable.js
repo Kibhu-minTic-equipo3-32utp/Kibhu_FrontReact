@@ -6,7 +6,7 @@ import Table from 'react-bootstrap/Table';
 import EditClientForm from './EditClientForm';
 
 //iconos
-import  { Envelope}  from 'react-bootstrap-icons'
+import  { Envelope, CreditCard2BackFill, TelephonePlusFill, TrashFill, PencilSquare}  from 'react-bootstrap-icons'
 
 const ClientTable= ({objClient, edit}) => {
     const { clients} = useContext(ClientContext);
@@ -41,18 +41,18 @@ const ClientTable= ({objClient, edit}) => {
                             <tr key={objClient.identification} >
                                 <td>{objClient.firstname}</td>
                                 <td>{objClient.lastname}</td>
-                                <td>{objClient.typeid}</td>
-                                <td>{objClient.identification}</td>
+                                <td>{objClient.typeid }</td>
+                                <td>{objClient.identification} <CreditCard2BackFill/></td>
                                 <td>{objClient.mail} <Envelope/> </td>
-                                <td>{objClient.contact}</td>
+                                <td>{objClient.contact} <TelephonePlusFill/> </td>
                                 <td>
                             <button
                                 onClick={handleShow}
-                            > Edit</button>
+                            > Edit <PencilSquare/> </button>
                             <button
                                 /*  onClick={() => {props.deleteClient(objClient.identification)}}*/
                             > 
-                                Delete
+                                Delete <TrashFill/>
                             </button>
                             </td>
                         </tr>
