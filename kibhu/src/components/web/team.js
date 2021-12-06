@@ -97,7 +97,7 @@ export default class Team extends Component {
                   </div>
                   <div className="content">
                     <div className="title">Myriam Hernandez</div>
-                    <div className="sub-title">Senior Analyst</div>
+                    <div className="sub-title">Senior QA Analyst</div>
                     <p className="card-text">
                       Ingeniera Electrónica integral, diseño de sistemas de
                       optimización de procesos industriales, experiencia en
