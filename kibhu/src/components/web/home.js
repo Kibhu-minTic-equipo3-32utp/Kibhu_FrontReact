@@ -24,9 +24,6 @@ const Home = () => {
             <li>
               <a href="#sobre-nosotros">Sobre nosotros</a>
             </li>
-            <li>
-              <a href="#noticias">Noticias</a>
-            </li>
           </ul>
         </div>
       </div>
