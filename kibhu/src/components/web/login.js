@@ -35,6 +35,7 @@ const Login = () => {
         <div className="lgn">
             <Container>
             <h2 className="text-center">Login</h2>
+            <h3>holaa</h3>
             <Alert show={show} variant="warning"> CREDENCIALES INVALIDAS</Alert>
             <Form onSubmit={handleSubmit} className="usuario">
                 <Form.Group className="mb-3" controlId="formBasicEmail">
