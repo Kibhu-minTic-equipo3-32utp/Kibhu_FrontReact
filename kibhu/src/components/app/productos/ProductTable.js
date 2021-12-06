@@ -1,22 +1,16 @@
 import React, { useContext, useEffect, useState } from "react";
-import ClientContext from "../../../controllers/Client.controller";
+import ProductContext from "../../../controllers/Product.controller";
 
-import Container from "react-bootstrap/Container";
-import Table from "react-bootstrap/Table";
-import EditClientForm from "./EditProductForm";
+import EditProductForm from "./EditProductForm";
 
 //iconos
 import { Envelope } from "react-bootstrap-icons";
+import { Card, Container, Button, CardGroup, Row, Col } from "react-bootstrap";
 
-const ClientTable = ({ objClient, edit }) => {
-  const { clients } = useContext(ClientContext);
-  const { setClient } = useContext(ClientContext);
+const ProductTable = ({ objProduct, edit }) => {
+  const { setProduct } = useContext(ProductContext);
 
-  const { deleteClient } = useContext(ClientContext);
 
-  const handleDelete = (obs) => {
-    deleteClient(obs);
-  };
 
   const [show, setShow] = useState(false);
 
@@ -25,54 +19,35 @@ const ClientTable = ({ objClient, edit }) => {
   const handleShow = () => setShow(true);
 
   const handleUpdate = (obj) => {
-    setClient(obj);
+    setProduct(obj);
   };
 
   return (
     <>
-      <Table
-        striped
-        bordered
-        hover
-        variant="dark"
-        cellPadding={0}
-        cellSpacing={0}
-      >
-        <tbody>
-          {clients.length > 0 ? (
-            <tr key={objClient.identification}>
-              <td>{objClient.firstname}</td>
-              <td>{objClient.lastname}</td>
-              <td>{objClient.typeid}</td>
-              <td>{objClient.identification}</td>
-              <td>
-                {objClient.mail} <Envelope />{" "}
-              </td>
-              <td>{objClient.contact}</td>
-              <td>
-                <button onClick={handleShow}> Edit</button>
-                <button
-                /*  onClick={() => {props.deleteClient(objClient.identification)}}*/
-                >
-                  Delete
-                </button>
-              </td>
-            </tr>
-          ) : (
-            <tr>
-              <td colSpan={7}>No clientes</td>
-            </tr>
-          )}
-        </tbody>
-      </Table>
-      <EditClientForm
+    <Container>
+      <Card border="warning" style={{ width: "18rem"}}> 
+        <Card.Img  variant="top" src={objProduct.img} /> 
+        <Card.Body>
+          <Card.Title>{objProduct.name}</Card.Title>
+          <Card.Text>
+            {objProduct.description}
+            <br></br>
+            Precio: {objProduct.priceout}
+            </Card.Text>
+        </Card.Body>
+        <Card.Footer>
+          <Button  onClick={handleShow}>Edit </Button>
+        </Card.Footer>
+      </Card>
+      
+    </Container>
+      <EditProductForm
         show={show}
         handleClose={handleClose}
-        objClient={objClient}
+        objProduct={objProduct}
         handleUpdate={handleUpdate}
-        handleDelete={handleDelete}
-      />
+      /> 
     </>
   );
 };
-export default ClientTable;
+export default ProductTable;

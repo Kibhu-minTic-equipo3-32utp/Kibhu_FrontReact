@@ -4,28 +4,29 @@ import Form from 'react-bootstrap/Form';
 import FormGroup from 'react-bootstrap/esm/FormGroup';
 import FormLabel from 'react-bootstrap/esm/FormLabel';
 import FormControl from 'react-bootstrap/esm/FormControl';
-import InputGroup from 'react-bootstrap/InputGroup';
-import FormSelect from 'react-bootstrap/esm/FormSelect';
+import Container from 'react-bootstrap/Container';
 
 //elementos para el formulario
 import {useForm} from 'react-hook-form';
 import { ErrorMessage } from '@hookform/error-message';
-import ClientContext from '../../../controllers/Client.controller';
+import ProductContext from '../../../controllers/Product.controller';
 
 const objForm = {
-    firstname: '',
-    lastname: '',
-    mail: '',
-    contact: '',
-    identification: '',
-    typeid: ''
+    name: '',
+    description: '',
+    stock: '',
+    category: '',
+    img: "",
+    reference: '',
+    pricein: '',
+    priceout: ''
 };
 
 
 
-const AddClientForm = () => {
+const AddProductForm = () => {
 
-    const {handleCreate} = useContext(ClientContext);
+    const {handleCreate} = useContext(ProductContext);
 
     const [form, setForm] = useState(objForm);
 
@@ -44,95 +45,127 @@ const AddClientForm = () => {
     };
 
     return (
+    <Container>
         <Form onSubmit={handleSubmit}>
 
-            <InputGroup className="mb-3"> 
-                <InputGroup.Text>  Nombre y Apellido</InputGroup.Text>
-                <FormControl
-                    type="text" name="firstname" placeholder="Nombre " value={form.firstname} onChange={handleForm} required
-                />
-                <ErrorMessage errors={errors}  />
-                <ErrorMessage
-                    errors={errors}
-                    render={({message})  => <p>{message}</p> }
-                />
-                <FormControl
-                    type="text" name="lastname" placeholder="Apellido " value={form.lastname} onChange={handleForm} required
-                />
-                <ErrorMessage errors={errors} name="lastname" />
-                <ErrorMessage
-                    errors={errors}
-                    name="lastname"
-                    render={({message})  => <p>{message}</p> }
-                />
-            </InputGroup>
+            <FormGroup> 
+            <FormLabel>Nombre Producto </FormLabel>
+            <FormControl
+                type="text" name="name" placeholder="Nombre del producto" value={form.name} onChange={handleForm} required
+            />
+            <ErrorMessage errors={errors} name="name" />
 
-            <FormGroup>
-            <FormLabel>Tipo de Id </FormLabel>
-            <FormSelect  aria-label="Default select example"
+            <ErrorMessage
+                errors={errors}
+                name="name"
+                render={({message})  => <p>{message}</p> }
+            />
+            </FormGroup>
+
+            <FormGroup> 
+            <FormLabel>Descripción </FormLabel>
+            <FormControl
+                type="text" name="description" placeholder="Descripción del producto" value={form.description} onChange={handleForm} 
+            />
+            <ErrorMessage errors={errors} name="description" />
+
+            <ErrorMessage
+                errors={errors}
+                name="description"
+                render={({message})  => <p>{message}</p> }
+            />
+            </FormGroup>
+
+            <FormGroup> 
+            <FormLabel>Categoría </FormLabel>
+            <FormControl
+                type="text" name="category" placeholder="Categorías" value={form.category} onChange={handleForm} 
+            />
+            <ErrorMessage errors={errors} name="category" />
+
+            <ErrorMessage
+                errors={errors}
+                name="category"
+                render={({message})  => <p>{message}</p> }
+            />
+            </FormGroup>
+
+            <FormGroup> 
+            <FormLabel>Imagen </FormLabel>
+            <FormControl
+                type="text" name="img" placeholder="Imagen" value={form.img} onChange={handleForm} 
+            />
+            <ErrorMessage errors={errors} name="img" />
+
+            <ErrorMessage
+                errors={errors}
+                name="img"
+                render={({message})  => <p>{message}</p> }
+            />
+            </FormGroup>
+
+            <FormGroup> 
+            <FormLabel>Referencia </FormLabel>
+            <FormControl
+                type="number" name="reference" placeholder="# Referencia " value={form.reference} onChange={handleForm}  required
+            />
+            <ErrorMessage errors={errors} name="reference" />
+
+            <ErrorMessage
+                errors={errors}
+                name="reference"
+                render={({message})  => <p>{message}</p> }
+            />
+            </FormGroup>
+
             
-            type="select" name="typeid"  value={form.typeid} onChange={handleForm}  required
-            >
-                <option> Seleccione tipo de ID </option>
-                <option> CC </option>
-                <option> TI </option>
-                <option> Pasaporte </option>
-                <option> NIP </option>
-            </FormSelect>
-            <ErrorMessage errors={errors} name="typeid" />
+
+            <FormGroup> 
+            <FormLabel>stock </FormLabel>
+            <FormControl
+                type="number" name="stock" placeholder="Cantidad de productos " value={form.stock} onChange={handleForm}  required
+            />
+            <ErrorMessage errors={errors} name="stock" />
 
             <ErrorMessage
                 errors={errors}
-                name="typeid"
+                name="stock"
                 render={({message})  => <p>{message}</p> }
             />
             </FormGroup>
 
             <FormGroup> 
-            <FormLabel>Identificación </FormLabel>
+            <FormLabel>Precio de entrada </FormLabel>
             <FormControl
-                type="number" name="identification" placeholder="# Identificación " value={form.identification} onChange={handleForm}  required
+                type="number" name="pricein" placeholder="Precio al que se compró " value={form.pricein} onChange={handleForm}  required
             />
-            <ErrorMessage errors={errors} name="identification" />
+            <ErrorMessage errors={errors} name="pricein" />
 
             <ErrorMessage
                 errors={errors}
-                name="identification"
+                name="pricein"
                 render={({message})  => <p>{message}</p> }
             />
             </FormGroup>
 
             <FormGroup> 
-            <FormLabel>Mail </FormLabel>
+            <FormLabel>Precio de salida </FormLabel>
             <FormControl
-                type="mail" name="mail" placeholder="Correo Electrónico " value={form.mail} onChange={handleForm} required
+                type="number" name="priceout" placeholder="Precio al que se vende " value={form.priceout} onChange={handleForm}  required
             />
-            <ErrorMessage errors={errors} name="email" />
+            <ErrorMessage errors={errors} name="priceout" />
 
             <ErrorMessage
                 errors={errors}
-                name="email"
-                render={({message})  => <p>{message}</p> }
-            />
-            </FormGroup>
-
-            <FormGroup> 
-            <FormLabel>Contacto </FormLabel>
-            <FormControl
-                type="number" name="contact" placeholder="# Contacto " value={form.contact} onChange={handleForm}  required
-            />
-            <ErrorMessage errors={errors} name="contact" />
-
-            <ErrorMessage
-                errors={errors}
-                name="contact"
+                name="priceout"
                 render={({message})  => <p>{message}</p> }
             />
             </FormGroup>
             
             <button variant="succes" type="submit"> Agregar nuevo cliente</button>
         </Form>
+    </Container> 
     );
 }
 
-export default AddClientForm;
+export default AddProductForm;

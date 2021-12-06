@@ -1,11 +1,6 @@
 import React, { useEffect, useState} from 'react'
 //elementos de bootstrap
-/*  import Form from 'react-bootstrap/Form';
-import FormGroup from 'react-bootstrap/esm/FormGroup';
-import FormLabel from 'react-bootstrap/esm/FormLabel';
-import FormControl from 'react-bootstrap/esm/FormControl';
-import InputGroup from 'react-bootstrap/InputGroup';
-import FormSelect from 'react-bootstrap/esm/FormSelect';*/
+
 import {Form, Modal, Button, InputGroup} from 'react-bootstrap'
 
 
@@ -14,16 +9,18 @@ import {useForm} from 'react-hook-form';
 import { ErrorMessage } from '@hookform/error-message';
 
 const objForm = {
-    firstname: '',
-    lastname: '',
-    mail: '',
-    contact: '',
-    identification: '',
-    typeid: ''
-}
+    name: '',
+    description: '',
+    stock: '',
+    category: '',
+    img: "",
+    reference: '',
+    pricein: '',
+    priceout: ''
+};
 
 
-const EditClientForm = ({show, handleClose, objClient, handleUpdate}) => {
+const EditProductForm = ({show, handleClose, objProduct, handleUpdate}) => {
 
 
     const { formState: { errors }} = useForm();
@@ -32,14 +29,16 @@ const EditClientForm = ({show, handleClose, objClient, handleUpdate}) => {
 
     useEffect(()  => {
         setForm({
-            firstname: objClient.firstname,
-            lastname: objClient.lastname,
-            mail: objClient.mail,
-            contact: objClient.contact,
-            identification: objClient.identification,
-            typeid: objClient.typeid
+            name: objProduct.name,
+        description: objProduct.description,
+        stock: objProduct.stock,
+        category: objProduct.category,
+        img: objProduct.img,
+        reference: objProduct.reference,
+        pricein: objProduct.pricein,
+        priceout: objProduct.priceout
         })
-    }, [objClient])
+    }, [objProduct])
 
     const handleForm = (e) => {
         setForm({ ...form, [e.target.name]: e.target.value});
@@ -61,90 +60,122 @@ const EditClientForm = ({show, handleClose, objClient, handleUpdate}) => {
             </Modal.Header>
             <Modal.Body>
         <Form>
-            <InputGroup className="mb-3"> 
-                <InputGroup.Text>  Nombre y Apellido</InputGroup.Text>
-                <Form.Control
-                    type="text" name="firstname" placeholder="Nombre " value={form.firstname} onChange={handleForm} required
-                />
-                <ErrorMessage errors={errors}  />
-                <ErrorMessage
-                    errors={errors}
-                    render={({message})  => <p>{message}</p> }
-                />
-                <Form.Control
-                    type="text" name="lastname" placeholder="Apellido " value={form.lastname} onChange={handleForm} required
-                />
-                <ErrorMessage errors={errors} name="lastname" />
-                <ErrorMessage
-                    errors={errors}
-                    name="lastname"
-                    render={({message})  => <p>{message}</p> }
-                />
-            </InputGroup>
 
-            <Form.Group>
-            <Form.Label>Tipo de Id </Form.Label>
-            <Form.Select  aria-label="Default select example"
+            <Form.Group> 
+            <Form.Label>Nombre Producto </Form.Label>
+            <Form.Control
+                type="text" name="name" placeholder="Nombre del producto" value={form.name} onChange={handleForm} required
+            />
+            <ErrorMessage errors={errors} name="name" />
+
+            <ErrorMessage
+                errors={errors}
+                name="name"
+                render={({message})  => <p>{message}</p> }
+            />
+            </Form.Group>
+
+            <Form.Group> 
+            <Form.Label>Descripción </Form.Label>
+            <Form.Control
+                type="text" name="description" placeholder="Descripción del producto" value={form.description} onChange={handleForm} 
+            />
+            <ErrorMessage errors={errors} name="description" />
+
+            <ErrorMessage
+                errors={errors}
+                name="description"
+                render={({message})  => <p>{message}</p> }
+            />
+            </Form.Group>
+
+            <Form.Group> 
+            <Form.Label>Categoría </Form.Label>
+            <Form.Control
+                type="text" name="category" placeholder="Categorías" value={form.category} onChange={handleForm} 
+            />
+            <ErrorMessage errors={errors} name="category" />
+
+            <ErrorMessage
+                errors={errors}
+                name="category"
+                render={({message})  => <p>{message}</p> }
+            />
+            </Form.Group>
+
+            <Form.Group> 
+            <Form.Label>Imagen </Form.Label>
+            <Form.Control
+                type="text" name="img" placeholder="Imagen" value={form.img} onChange={handleForm} 
+            />
+            <ErrorMessage errors={errors} name="img" />
+
+            <ErrorMessage
+                errors={errors}
+                name="img"
+                render={({message})  => <p>{message}</p> }
+            />
+            </Form.Group>
+
+            <Form.Group> 
+            <Form.Label>Referencia </Form.Label>
+            <Form.Control
+                type="number" name="reference" placeholder="# Referencia " value={form.reference} onChange={handleForm}  required
+            />
+            <ErrorMessage errors={errors} name="reference" />
+
+            <ErrorMessage
+                errors={errors}
+                name="reference"
+                render={({message})  => <p>{message}</p> }
+            />
+            </Form.Group>
+
             
-            type="select" name="typeid"  value={form.typeid} onChange={handleForm}  required
-            >
-                <option> Seleccione tipo de ID </option>
-                <option> CC </option>
-                <option> TI </option>
-                <option> Pasaporte </option>
-                <option> NIP </option>
-            </Form.Select>
-            <ErrorMessage errors={errors} name="typeid" />
+
+            <Form.Group> 
+            <Form.Label>stock </Form.Label>
+            <Form.Control
+                type="number" name="stock" placeholder="Cantidad de productos " value={form.stock} onChange={handleForm}  required
+            />
+            <ErrorMessage errors={errors} name="stock" />
 
             <ErrorMessage
                 errors={errors}
-                name="typeid"
+                name="stock"
                 render={({message})  => <p>{message}</p> }
             />
             </Form.Group>
 
             <Form.Group> 
-            <Form.Label>Identificación </Form.Label>
+            <Form.Label>Precio de entrada </Form.Label>
             <Form.Control
-                type="number" name="identification" placeholder="# Identificación " value={form.identification} onChange={handleForm}  required
+                type="number" name="pricein" placeholder="Precio al que se compró " value={form.pricein} onChange={handleForm}  required
             />
-            <ErrorMessage errors={errors} name="identification" />
+            <ErrorMessage errors={errors} name="pricein" />
 
             <ErrorMessage
                 errors={errors}
-                name="identification"
+                name="pricein"
                 render={({message})  => <p>{message}</p> }
             />
             </Form.Group>
 
             <Form.Group> 
-            <Form.Label>Mail </Form.Label>
+            <Form.Label>Precio de salida </Form.Label>
             <Form.Control
-                type="mail" name="mail" placeholder="Correo Electrónico " value={form.mail} onChange={handleForm} required
+                type="number" name="priceout" placeholder="Precio al que se vende " value={form.priceout} onChange={handleForm}  required
             />
-            <ErrorMessage errors={errors} name="email" />
+            <ErrorMessage errors={errors} name="priceout" />
 
             <ErrorMessage
                 errors={errors}
-                name="email"
-                render={({message})  => <p>{message}</p> }
-            />
-            </Form.Group>
-
-            <Form.Group> 
-            <Form.Label>Contacto </Form.Label>
-            <Form.Control
-                type="number" name="contact" placeholder="# Contacto " value={form.contact} onChange={handleForm}  required
-            />
-            <ErrorMessage errors={errors} name="contact" />
-
-            <ErrorMessage
-                errors={errors}
-                name="contact"
+                name="priceout"
                 render={({message})  => <p>{message}</p> }
             />
             </Form.Group>
             
+            <button variant="succes" type="submit"> Agregar nuevo cliente</button>
         </Form>
         <Modal.Footer>
             <Button variant="succes" onClick={handleEdit}> Editar Cliente</Button>
@@ -155,4 +186,4 @@ const EditClientForm = ({show, handleClose, objClient, handleUpdate}) => {
     );
 }
 
-export default EditClientForm;
+export default EditProductForm;

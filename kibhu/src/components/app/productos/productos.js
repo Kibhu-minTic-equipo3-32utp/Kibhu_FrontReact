@@ -1,20 +1,21 @@
 //Productos y su catalogo será trabajado con hooks
 import Badge from "react-bootstrap/Badge";
+import ProductContext from "../../../controllers/Product.controller";
+import AddProductForm from "./AddProductForm";
+import ProductTable from "./ProductTable";
 
-/* import React, { useContext } from "react";
-import ClientTable from "./ProductTable";
-import AddClientForm from "./AddProductForm";
-import ClientContext from "../../../controllers/Client.controller";
-import ClientHeader from "./productHead";
-import { Table } from "react-bootstrap"; */
+import React, { useContext } from "react";
+import { Col, Row } from "react-bootstrap";
+
 
 const Productos = () => {
-  /*  const { clients } = useContext(ClientContext); */
+
+
+  const { products } = useContext(ProductContext); 
 
   return (
-    <div className="container">
-      <h1>Productos.com</h1>
-      {/* <div className="flex-row">
+    
+  <div className="flex-row">
         <div className="flex-large">
           <h1>
             <Badge pill bg="secondary">
@@ -22,21 +23,31 @@ const Productos = () => {
             </Badge>
           </h1>
           <br></br>
-          <br></br>
-          <Table striped bordered hover variant="dark">
-            {clients.map((e) => (
-              <ClientTable objClient={e} edit={true} />
+          <div>
+            
+            {products.map((e) => (
+              <Row>
+              <Col for="client in clients" key="client.reference">
+              <ProductTable
+              key={e.reference}
+              objProduct={e}
+              edit={true}
+              />
+              </Col>
+            </Row>
             ))}
-          </Table>
+            
+          </div>
+          <br></br>
+          
         </div>
-        <AddClientForm />
+        <AddProductForm />
 
         <br></br>
         <br></br>
         <br></br>
         <br></br>
-      </div> */}
-    </div>
+      </div> 
   );
 };
 

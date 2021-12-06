@@ -4,6 +4,7 @@ import AuthContext from "../../controllers/Auth.controller";
 import { ClientProvider } from "../../controllers/Client.controller";
 import { SuplierProvider } from "../../controllers/Suplier.controller";
 import { UserProvider } from "../../controllers/User.controller";
+import { ProductProvider } from "../../controllers/Product.controller";
 
 import logo from "../../assets/logo pequeño kibhu new.png";
 
@@ -43,7 +44,9 @@ function Kibhu() {
       <SuplierProvider>
         <ClientProvider>
           <UserProvider>
-          <Outlet />
+            <ProductProvider>
+              <Outlet />
+            </ProductProvider>
           </UserProvider>
         </ClientProvider>
       </SuplierProvider>
