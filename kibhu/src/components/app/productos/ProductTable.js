@@ -4,13 +4,11 @@ import ProductContext from "../../../controllers/Product.controller";
 import EditProductForm from "./EditProductForm";
 
 //iconos
-import { Envelope } from "react-bootstrap-icons";
 import { Card, Container, Button, CardGroup, Row, Col } from "react-bootstrap";
+import { Cash, PencilSquare } from "react-bootstrap-icons";
 
 const ProductTable = ({ objProduct, edit }) => {
   const { setProduct } = useContext(ProductContext);
-
-
 
   const [show, setShow] = useState(false);
 
@@ -24,29 +22,28 @@ const ProductTable = ({ objProduct, edit }) => {
 
   return (
     <>
-    <Container>
-      <Card border="warning" style={{ width: "18rem"}}> 
-        <Card.Img  variant="top" src={objProduct.img} /> 
-        <Card.Body>
-          <Card.Title>{objProduct.name}</Card.Title>
-          <Card.Text>
-            {objProduct.description}
-            <br></br>
-            Precio: {objProduct.priceout}
+      <Container>
+        <Card border="warning" style={{ width: "18rem" }}>
+          <Card.Img variant="top" src={objProduct.img} />
+          <Card.Body>
+            <Card.Title>{objProduct.name}</Card.Title>
+            <Card.Text>
+              {objProduct.description}
+              <br></br>
+              <b>Precio:</b> {objProduct.priceout}
             </Card.Text>
-        </Card.Body>
-        <Card.Footer>
-          <Button  onClick={handleShow}>Edit </Button>
-        </Card.Footer>
-      </Card>
-      
-    </Container>
+          </Card.Body>
+          <Card.Footer>
+            <Button onClick={handleShow}>Edit </Button>
+          </Card.Footer>
+        </Card>
+      </Container>
       <EditProductForm
         show={show}
         handleClose={handleClose}
         objProduct={objProduct}
         handleUpdate={handleUpdate}
-      /> 
+      />
     </>
   );
 };
