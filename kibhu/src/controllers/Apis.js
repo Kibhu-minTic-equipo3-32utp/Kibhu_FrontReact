@@ -1,5 +1,4 @@
-const server = 'http://localhost:5000'
-
+const server = "https://backendkibhu.herokuapp.com";
 
 // LOGIN
 
@@ -14,8 +13,6 @@ const apiSingleClient = `${apiClient}/:identification`;
 const apiCountedClient = `${server}/countedclients`;
 
 const apiSortedClient = `${server}/sortedclients`;
-
-
 
 // PROVEEDORES
 
@@ -43,16 +40,26 @@ const apiProduct = `${server}/products`;
 
 const apiSingleProduct = `${apiProduct}/:reference`;
 
-const apiCountedProduct= `${server}/countedproducts`;
+const apiCountedProduct = `${server}/countedproducts`;
 
 const apiSortedProduct = `${server}/sortedproducts`;
 
-
-
-
-export {apiClient, apiSingleClient, apiLogin, apiCountedClient, apiSortedClient, 
-    apiSingleSuplier,apiCountedSuplier, apiSortedSuplier, apiSuplier,
-    apiUser, apiSingleUser, apiCountedUser, apiSortedUser,
-    apiProduct, apiSingleProduct, apiCountedProduct, apiSortedProduct
-
+export {
+  apiClient,
+  apiSingleClient,
+  apiLogin,
+  apiCountedClient,
+  apiSortedClient,
+  apiSingleSuplier,
+  apiCountedSuplier,
+  apiSortedSuplier,
+  apiSuplier,
+  apiUser,
+  apiSingleUser,
+  apiCountedUser,
+  apiSortedUser,
+  apiProduct,
+  apiSingleProduct,
+  apiCountedProduct,
+  apiSortedProduct,
 };
