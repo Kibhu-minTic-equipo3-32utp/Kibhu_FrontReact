@@ -1,16 +1,34 @@
 import React, { useContext, useState} from 'react';
 import SuplierContext from '../../../controllers/Suplier.controller';
-/*  
-const SuplierTable = ({ supliers }) => {
-    const {setSuplier} = useContext(SuplierContext);
+import Table from 'react-bootstrap/Table';
+
+const SuplierTable  = ({provid}) => {
+    const { supliers } = useContext(SuplierContext);
+
     return (
         <>
-        <h4>{supliers.name}</h4>
-        <p>{supliers.mail}</p>
-        <p>{supliers.ruc}</p>
-        <p>{supliers.contact}</p>
+        <Table striped bordered hover variant="dark" cellPadding={0} cellSpacing={0}></Table>
+        <tbody>
+            {
+                supliers.length > 0 ? (
+                        
+                    <tr key={provid.ruc} >
+                        <td>{provid.name}</td>
+                        <td>{provid.mail}</td>
+                        <td>{provid.contact}</td>
+                        <td>                   
+                    </td>
+                </tr>
+                ) : (
+                    <tr> 
+                        <td colSpan={7}>No Proveedores</td>
+                    </tr>
+                )
+            }
+
+        </tbody>
         </>
-    )
+    );
 }
 
-export default SuplierTable; */
+export default SuplierTable;
