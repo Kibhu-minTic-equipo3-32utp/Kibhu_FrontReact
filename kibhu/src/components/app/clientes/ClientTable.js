@@ -42,17 +42,19 @@ const ClientTable= ({objClient, edit}) => {
                                 <td>{objClient.firstname}</td>
                                 <td>{objClient.lastname}</td>
                                 <td>{objClient.typeid }</td>
-                                <td>{objClient.identification} <CreditCard2BackFill/></td>
-                                <td>{objClient.mail} <Envelope/> </td>
-                                <td>{objClient.contact} <TelephonePlusFill/> </td>
+                                <td><CreditCard2BackFill/> {objClient.identification} </td>
+                                <td><Envelope/> {objClient.mail}  </td>
+                                <td><TelephonePlusFill/>{objClient.contact}  </td>
                                 <td>
                             <button
+                            variant="warning"
                                 onClick={handleShow}
-                            > Edit <PencilSquare/> </button>
+                            >  <PencilSquare/> </button>
                             <button
+                            variant="danger"
                                 /*  onClick={() => {props.deleteClient(objClient.identification)}}*/
                             > 
-                                Delete <TrashFill/>
+                                <TrashFill/>
                             </button>
                             </td>
                         </tr>
